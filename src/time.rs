@@ -68,7 +68,7 @@ pub struct Date {
     /// Year
     pub year: i16,
     /// Month
-    pub month: Month,
+    pub month: u8,
     /// Decimal day
     ///
     /// range: *1.0 - 31.0*

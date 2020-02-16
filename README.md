@@ -1,5 +1,9 @@
 # astro-rust [![](http://meritbadge.herokuapp.com/astro)](https://crates.io/crates/astro) [![](https://travis-ci.org/saurvs/astro-rust.svg?branch=master)](https://travis-ci.org/saurvs/astro-rust) [![](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/saurvs/astro-rust/blob/master/LICENSE.md)
 
+**NOTE: This is a old-man curmudeon-like fork. (ha.) The 2.0.0 version on crates.io had `decimal_day` from src/time.rs broken, the patched code never made it to crates.io. However, the patched code also had an enum replacing a u8 that was used in the 2.0.0 crates.io version. Seeing that the original project has been unchanged other than a couple of very small things over the past four years, this is a fork to have the fixed `decimal_day` along with the u8 used instead of the enum. There is also a fix for an accidental equation termination in src/lunar.rs.**
+
+Please see https://github.com/saurvs/astro-rust for original project. Most things left unchanged from fork at [this commit](https://github.com/saurvs/astro-rust/commit/c62ffdc7d55adfa1ee835fc7006d42d967bc4836).
+
 **Contents**
 
 [API Docs](https://saurvs.github.io/astro-rust/)
