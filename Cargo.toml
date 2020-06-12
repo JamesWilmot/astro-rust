@@ -2,7 +2,7 @@
 
 name = "astro"
 version = "2.0.1-arossbell"
-authors = ["Saurav Sachidanand", "Adam R Bell"]
+authors = ["Saurav Sachidanand", "Adam R Bell", "James Wilmot"]
 
 license = "MIT"
 
@@ -11,3 +11,6 @@ documentation = "https://saurvs.github.io/astro-rust"
 
 description = "Advanced algorithms for astronomy"
 keywords = ["astronomy", "algorithms", "ephemeris", "planet", "solar"]
+
+[dev-dependencies]
+assert_approx_eq = "1.1.0"
