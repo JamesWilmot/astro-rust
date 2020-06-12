@@ -24,7 +24,9 @@ THE SOFTWARE.
 
 #[macro_use]
 extern crate astro;
+extern crate assert_approx_eq;
 
+use assert_approx_eq::assert_approx_eq;
 use astro::*;
 
 #[test]
@@ -121,4 +123,29 @@ fn date_frm_julian_day() {
 
     }
 
+}
+
+#[test]
+fn decimal_day() {
+    // day, hr, min, sec, time_zone, decimal_day
+    struct TestData(u8, u8, u8, f64, f64, f64);
+    let test_data = [
+        TestData(1, 0, 0, 0.0, 0.0, 1.0),
+        TestData(31, 0, 0, 0.0, 0.0, 31.0),
+        TestData(2, 3, 0, 0.0, 0.0, 2.125),
+        TestData(2, 6, 30, 0.0, 0.0, 2.27083333333),
+        TestData(10, 19, 55, 22.0, 0.0, 10.8301157407),
+        TestData(22, 7, 3, 13.45, 0.0, 22.2939056713),
+    ];
+
+    for data in test_data.iter() {
+        let day = time::DayOfMonth{
+                day: data.0, 
+                hr: data.1, 
+                min: data.2, 
+                sec: data.3, 
+                time_zone: data.4};
+        
+        assert_approx_eq!(time::decimal_day(&day), data.5);
+    }
 }
