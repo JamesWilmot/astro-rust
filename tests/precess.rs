@@ -30,7 +30,7 @@ fn annual_precess() {
 
     let d = time::Date {
         year        : 1978,
-        month       : time::Month::Jan,
+        month       : 1,
         decimal_day : 0.0,
         cal_type    : time::CalType::Gregorian};
 

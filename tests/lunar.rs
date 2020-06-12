@@ -50,7 +50,7 @@ fn time_of_passage_through_nodes() {
 
     let date = time::Date {
         year        : 1987,
-        month       : time::Month::May,
+        month       : 5, // may
         decimal_day : 15.0,
         cal_type    : time::CalType::Gregorian
     };
@@ -75,7 +75,7 @@ fn liberations() {
     };
     let date = time::Date {
         year        : 1992,
-        month       : time::Month::Apr,
+        month       : 4, // april
         decimal_day : time::decimal_day(&day_of_month),
         cal_type    : time::CalType::Gregorian
     };
@@ -108,7 +108,7 @@ fn liberations() {
 fn phases() {
     let date_last_quarter = time::Date {
         year        : 2044,
-        month       : time::Month::Jan,
+        month       : 1,
         decimal_day : 0.0,
         cal_type    : time::CalType::Gregorian
     };
@@ -119,7 +119,7 @@ fn phases() {
 
     let date_new_moon = time::Date {
         year        : 1977,
-        month       : time::Month::Feb,
+        month       : 2,
         decimal_day : 0.0,
         cal_type    : time::CalType::Gregorian};
     let JD_new_moon = lunar::time_of_phase(&date_new_moon, &lunar::Phase::New);
