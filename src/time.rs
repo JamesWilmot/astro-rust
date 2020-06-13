@@ -200,7 +200,7 @@ Checks if a year is a leap year
 * `year`    : Year
 * `cal_type`: `CalType` enum
 **/
-pub fn is_leap_year(year: i16, cal_type: &CalType) -> (bool) {
+pub fn is_leap_year(year: i16, cal_type: &CalType) -> bool {
 
     match cal_type {
         &CalType::Julian    => year % 4 == 0,
