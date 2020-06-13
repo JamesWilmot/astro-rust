@@ -67,13 +67,13 @@ fn passage_through_nodes() {
     let (ascen, r_a) = orbit::parabolic::passage_through_node(
         w, q, T, &orbit::Node::Ascend
     );
-    assert_eq!(util::round_upto_digits((T - ascen), 2), 4354.65);
+    assert_eq!(util::round_upto_digits(T - ascen, 2), 4354.65);
     assert_eq!(util::round_upto_digits(r_a, 2), 28.07);
 
     let (descend, r_b) = orbit::parabolic::passage_through_node(
         w, q, T, &orbit::Node::Descend
     );
-    assert_eq!(util::round_upto_digits((T - descend), 4), -28.3454);
+    assert_eq!(util::round_upto_digits(T - descend, 4), -28.3454);
     assert_eq!(util::round_upto_digits(r_b, 4), 1.3901);
 
 }
