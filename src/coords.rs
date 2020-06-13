@@ -338,6 +338,8 @@ macro_rules! loc_hz_frm_eq {
 /**
 Computes the hour angle from local horizontal coordinates
 
+Meeus, J. (1998). Astronomical algorithms [Second edition], p. 94
+
 # Returns
 
 * `hour_angle`: Hour angle *| in radians*
@@ -347,6 +349,7 @@ Computes the hour angle from local horizontal coordinates
 * `az`: Azimuth *| in radians*
 * `alt`: Altitude *| in radians*
 * `observer_lat`: Observer's geographical latitude *| in radians*
+
 **/
 pub fn hr_angl_frm_hz(az: f64, alt: f64, observer_lat: f64) -> f64 {
 
@@ -360,6 +363,8 @@ pub fn hr_angl_frm_hz(az: f64, alt: f64, observer_lat: f64) -> f64 {
 /**
 Computes the declination from local horizontal coordinates
 
+Meeus, J. (1998). Astronomical algorithms [Second edition], p. 94
+
 # Returns
 
 * `dec`: Declination *| in radians*
@@ -370,11 +375,12 @@ Computes the declination from local horizontal coordinates
 * `alt`: Altitude *| in radians*
 * `observer_lat`: Observer's geographical latitude *| in radians*
 **/
+
 pub fn dec_frm_hz(az: f64, alt: f64, observer_lat: f64) -> f64 {
 
     (
         observer_lat.sin() * alt.sin()
-      - observer_lat.cos() * az.cos() * az.cos()
+      - observer_lat.cos() * alt.cos() * az.cos()
     ).asin()
 
 }
